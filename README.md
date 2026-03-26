@@ -7,7 +7,11 @@ Claude Code stores conversation history in `~/.claude/projects/` using encoded d
 ## Install
 
 ```bash
+# Install globally (recommended)
 npm install -g @plosson/mvcp
+
+# Or run without installing
+npx @plosson/mvcp <old-path> <new-path>
 ```
 
 ## Usage
@@ -21,12 +25,6 @@ mvcp --dry-run /old/path /new/path
 
 # List all Claude Code project histories
 mvcp ls
-```
-
-Or run directly without installing:
-
-```bash
-npx @plosson/mvcp /old/path /new/path
 ```
 
 ## What it does
@@ -44,4 +42,4 @@ If the project was already moved manually, `mvcp` will still move just the histo
 /home/user/projects/myapp → -home-user-projects-myapp
 ```
 
-These encoded directories live in `~/.claude/projects/`. The `ls` command shows all of them decoded back to readable paths.
+These encoded directories live in `~/.claude/projects/`. The `mvcp ls` command shows all of them decoded back to readable paths.
