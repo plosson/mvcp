@@ -1,6 +1,6 @@
 {
   "name": "@plosson/mvcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Move Claude Code project history when you relocate a project directory",
   "type": "module",
   "license": "MIT",
@@ -22,10 +22,10 @@
     "migration"
   ],
   "bin": {
-    "mvcp": "./src/index.ts"
+    "mvcp": "./dist/index.js"
   },
   "files": [
-    "src",
+    "dist",
     "LICENSE",
     "README.md"
   ],
@@ -33,6 +33,7 @@
     "dev": "bun run src/index.ts",
     "build": "bun build src/index.ts --outdir dist --target node",
     "build:native": "bun build src/index.ts --compile --minify --sourcemap --bytecode --define BUILD_VERSION=\"\\\"$(bun -e 'console.log(require(\"./package.json\").version)')\\\"\" --outfile dist/mvcp",
+    "prepublishOnly": "bun run build",
     "typecheck": "tsc --noEmit",
     "test": "bun test"
   },
